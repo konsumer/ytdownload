@@ -7,7 +7,7 @@ import { getInfo } from './yt.mjs'
 ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 
 if (process.argv.length < 3) {
-  console.error('Usage: dl <YOUTUBE_ID> [OUTFILE] [size]')
+  console.error('Usage: dl <YOUTUBE_ID> [OUTFILE] [SIZE]')
   process.exit(1)
 }
 
