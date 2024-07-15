@@ -1,8 +1,10 @@
+#!/usr/bin/env node
+
 import { writeFile, readFile } from 'fs/promises'
 import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import ffmpeg from 'fluent-ffmpeg'
 import cliProgress from 'cli-progress'
-import { getInfo } from './yt.mjs'
+import getInfo from './yt.mjs'
 
 ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 
