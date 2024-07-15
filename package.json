@@ -1,8 +1,26 @@
 {
+  "name": "@konsumer/ytdownload",
+  "version": "0.0.0",
+  "description": "Simple youtube video downloader CLI & library",
+  "main": "yt.mjs",
+  "type": "module",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "cli-progress": "^3.12.0",
     "fluent-ffmpeg": "^2.1.3"
   },
-  "type": "module"
+  "bin": "dl.mjs",
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konsumer/ytdownload.git"
+  },
+  "homepage": "https://konsumer.js.org/ytdownload",
+  "bugs": {
+    "url": "https://github.com/konsumer/ytdownload/issues"
+  }
 }

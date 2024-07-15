@@ -1,4 +1,4 @@
-export async function getInfo (videoId) {
+export default async function getInfo (videoId) {
   // hard-coded from https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube.py
   const apiKey = 'AIzaSyB-63vPrdThhKuerbB2N_l7Kwwcxj6yUAc'
 
