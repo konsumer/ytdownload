@@ -1,6 +1,6 @@
 {
   "name": "@konsumer/ytdownload",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple youtube video downloader CLI & library",
   "main": "yt.mjs",
   "type": "module",
