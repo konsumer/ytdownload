@@ -27,6 +27,7 @@ const mergeAudioVideo = (outfile, ...files) => new Promise((resolve, reject) => 
   cmd.save(outfile)
 }) 
 
+// download the 2 streams for the youtube ID
 async function downloadVideo(id, outfile, videoSize='large', audioSize='tiny') {
   const info = await getInfo(id)
   const video = info.streamingData.adaptiveFormats.find(f => f.mimeType.includes('video/mp4') && f.quality === videoSize)
