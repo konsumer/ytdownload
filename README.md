@@ -1,16 +1,11 @@
-## Quick Start
-
-```
-npm i
-node dl.mjs dQw4w9WgXcQ
-```
+This is a simple info/download utility/library for youtube videos.
 
 ## Usage
 
 ### CLI
 
 ```
-node dl.mjs <YOUTUBE_ID> [OUTFILE] [SIZE]
+npx -y @konsumer/ytdownload <YOUTUBE_ID> [OUTFILE] [SIZE]
 ```
 
 - `YOUTUBE_ID` - required - Your youtube-id, like `dQw4w9WgXcQ`
