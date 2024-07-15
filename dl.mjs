@@ -27,19 +27,19 @@ const mergeAudioVideo = (outfile, ...files) => new Promise((resolve, reject) => 
   cmd.save(outfile)
 }) 
 
-async function downloadVideo(id, outfile, size='tiny') {
+async function downloadVideo(id, outfile, videoSize='large', audioSize='tiny') {
   const info = await getInfo(id)
-  const video = info.streamingData.adaptiveFormats.find(f => f.mimeType.includes('video/mp4') && f.quality === size)
-  const audio = info.streamingData.adaptiveFormats.find(f => f.mimeType.includes('audio/mp4') && f.quality === size)
+  const video = info.streamingData.adaptiveFormats.find(f => f.mimeType.includes('video/mp4') && f.quality === videoSize)
+  const audio = info.streamingData.adaptiveFormats.find(f => f.mimeType.includes('audio/mp4') && f.quality === audioSize)
   if (!video || !audio) {
     throw new Error(`Media link not found for ${id}:${size}`)
   }
 
   if (typeof outfile === 'undefined') {
-    outfile = `${info.videoDetails.title}-${size}.mp4`
+    outfile = `${info.videoDetails.title}-${videoSize}-${audioSize}.mp4`
   }
 
-  console.log(`Downloading ${info.videoDetails.title} to - ${outfile}`)
+  console.log(`Downloading ${info.videoDetails.title} to "${outfile}"`)
   
   const multibar = new cliProgress.MultiBar({
     clearOnComplete: false,
@@ -85,4 +85,4 @@ async function downloadVideo(id, outfile, size='tiny') {
   await mergeAudioVideo(outfile, '/tmp/vid.mp4', '/tmp/aud.mp4')
 }
 
-await downloadVideo(process.argv[2],  process.argv[3], process.argv[4])
+await downloadVideo(process.argv[2],  process.argv[3], process.argv[4], 'tiny')
